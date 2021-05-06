@@ -6,13 +6,13 @@
     "start": "nodemon"
   },
   "dependencies": {
-    "debug": "4.3.1"
+    "debug": "*"
   },
   "devDependencies": {
-    "@swc-node/register": "1.2.1",
-    "@types/debug": "4.1.5",
-    "nodemon": "2.0.7",
-    "tsconfig-paths": "3.9.0",
-    "typescript": "4.2.4"
+    "@swc-node/register": "*",
+    "@types/debug": "*",
+    "nodemon": "*",
+    "tsconfig-paths": "*",
+    "typescript": "*"
   }
 }

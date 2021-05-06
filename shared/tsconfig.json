@@ -4,13 +4,12 @@
     "baseUrl": ".",
     "outDir": "dist",
     "paths": {
-      "shared/*": ["../shared/src/*"]
+      "shared/*": ["src/*"]
     }
   },
   "include": [
     "src",
-    "test",
-    "../shared"
+    "test"
   ],
   "exclude": [
     "dist"

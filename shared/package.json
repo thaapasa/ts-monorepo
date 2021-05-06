@@ -1,9 +1,19 @@
 {
   "name": "shared",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "clean": "rm -rf dist",
+    "test": "jest"
+  },
   "dependencies": {
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@types/uuid": "8.3.0"
+    "@swc-node/jest": "*",
+    "@types/jest": "*",
+    "@types/uuid": "8.3.0",
+    "jest": "*",
+    "ts-jest": "*",
+    "typescript": "4.2.4"
   }
 }

@@ -8,5 +8,19 @@
   "workspaces": [
     "server",
     "shared"
-  ]
+  ],
+  "resolutionsComments": {
+    "-": "We can configure the default versions for all tools used in all the projects"
+  },
+  "resolutions": {
+    "@swc-node/register": "1.2.1",
+    "@swc-node/jest": "1.2.1",
+    "@types/debug": "4.1.5",
+    "@types/jest": "26.0.23",
+    "debug": "4.3.1",
+    "nodemon": "2.0.7",
+    "ts-jest": "26.5.6",
+    "tsconfig-paths": "3.9.0",
+    "typescript": "4.2.4"
+  }
 }
