@@ -1,0 +1,132 @@
+# See: https://help.github.com/articles/dealing-with-line-endings/
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare text files that are always converted
+
+# Code files
+*.java text diff=java
+*.scala text
+*.sbt text
+*.kt text
+*.c text diff=cpp
+*.cpp text diff=cpp
+*.c++ text diff=cpp
+*.h text diff=cpp
+*.hpp text diff=cpp
+*.h++ text diff=cpp
+*.handlebars text
+*.cs text diff=csharp
+*.ddl text
+*.sql text
+*.rb text diff=ruby
+*.coffee text
+*.py diff=python
+*.php diff=php
+*.php3 diff=php
+*.pl diff=perl
+
+# Scripts
+*.sh text eol=lf
+*.bat text
+*.launch text
+*.patch text
+*.GET text
+*.get text
+
+# HTML, JS, CSS
+*.html text diff=html
+*.htm text diff=html
+*.css text diff=css
+*.less text
+*.sass text
+*.stylus text
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text
+*.htc text
+*.svg text eol=lf
+
+# Text, properties, xml
+*.txt text
+*.log text
+*.md text
+*.markdown text
+*.readme text
+*.README text
+*.tex text diff=tex
+*.conf text
+*.properties text
+*.settings text
+*.xml text
+*.xsd text
+*.dtd text
+*.ent text
+*.resx text
+*.wsdd text
+*.wsdl text
+*.xaml text
+*.csv text
+*.classpath text
+*.project text
+*.info text
+*.jmx text
+*.jtl text
+*.tmpl text
+*.lst text
+*.prefs text
+
+# Enforce specific EOL characters
+
+# npm config
+package-lock.json text eol=lf
+package.json text eol=lf
+yarn.lock text eol=lf
+
+# Denote all files that are truly binary and should not be modified.
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.xcf binary
+*.mp4 binary
+*.psd binary
+*.swf binary
+*.wav binary
+*.mpg binary
+*.webm binary
+*.wmv binary
+
+# Documents
+*.pdf binary
+*.doc binary
+*.dot binary
+*.odt binary
+*.xls binary
+*.xlsx binary
+*.csproj binary
+
+# Archives
+*.7z binary
+*.zip binary
+*.gz binary
+*.tgz binary
+*.tar binary
+*.tar.gz binary
+*.bz binary
+*.tar.bz binary
+*.jar binary
+*.war binary
+*.ear binary
+*.pack binary
+
+# Cache, class, etc.
+*.cache binary
+*.class binary
+*.bin binary
