@@ -7,5 +7,10 @@
 !.yarn/versions
 .pnp.*
 
+# Ignore node_modules
 node_modules
 */node_modules
+
+# Ignore build dirs
+dist
+*/dist

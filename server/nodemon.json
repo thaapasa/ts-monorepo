@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "../shared/src"],
+  "ext": "ts,tsx",
+  "ignore": ["src/**/*.test.ts"],
+  "exec": "DEBUG=server* node -r tsconfig-paths/register -r @swc-node/register ./src/index.ts"
+}
