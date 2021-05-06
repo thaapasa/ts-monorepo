@@ -1,0 +1,8 @@
+{
+  "name": "ts-monorepo",
+  "version": "1.0.0",
+  "description": "Example TypeScript monorepo",
+  "repository": "git@github.com:thaapasa/ts-monorepo.git",
+  "author": "Tuukka Haapasalo <tuukka.haapasalo@gmail.com>",
+  "license": "MIT"
+}
