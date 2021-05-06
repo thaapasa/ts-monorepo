@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "paths": {
+      "shared/*": ["../shared/src/*"]
+    }
+  },
+  "include": [
+    "src",
+    "test",
+    "../shared"
+  ],
+  "exclude": [
+    "dist",
+    "image"
+  ]
+}

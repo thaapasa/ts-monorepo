@@ -1,0 +1,9 @@
+{
+  "name": "shared",
+  "dependencies": {
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "8.3.0"
+  }
+}

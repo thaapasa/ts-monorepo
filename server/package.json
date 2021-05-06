@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "dependencies": {
+    "debug": "4.3.1"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.5"
+  }
+}
