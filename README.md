@@ -85,3 +85,6 @@ will find the files, but other tools need to be configured:
   in our approach the built files are in a different directory layout, so
   another `tsconfig.json` file must be used to specify the built directory
   layout.
+- `react-native`: add `babel-plugin-module-resolver` to configure Metro bundler.
+  Edit `babel.config.js` and `metro.config.js`; see the examples in the
+  [rnapp](./rnapp) folder.

@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "noEmitOnError": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true,
     "noErrorTruncation": true,
