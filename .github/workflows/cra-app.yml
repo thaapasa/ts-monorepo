@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 14.16.1
 
-      - name: Install dependencies for rnapp
+      - name: Install dependencies for CRA app
         run: yarn workspaces focus
 
       - name: Run tests
