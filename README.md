@@ -79,6 +79,10 @@ is to configure the paths to shared code via path aliases specified in `tsconfig
 With the path aliases in place in `tsconfig.json`, the TypeScript compiler (`tsc`)
 will find the files, but other tools need to be configured:
 
+Depending on the project, you may need to have the imported shared code folders
+added to the `include` list of your `tsconfig.json` so that `tsc` knows to compile
+the imported files.
+
 #### Jest
 
 Create a JS config file for jest, import `pathsToModuleNameMapper`
