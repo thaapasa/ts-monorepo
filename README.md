@@ -79,16 +79,60 @@ is to configure the paths to shared code via path aliases specified in `tsconfig
 With the path aliases in place in `tsconfig.json`, the TypeScript compiler (`tsc`)
 will find the files, but other tools need to be configured:
 
-- `jest`: create a JS config file for jest, import `pathsToModuleNameMapper`
-  from `ts-jest`, and use that to make jest aware of the path aliases.
-  If you get problems with multiple instances of React during testing, see
-  the jest configuration example in [rnapp](./rnapp):
-  - [jest.config.js](./rnapp/jest.config.js)
-  - [jest.resolver.js](./rnapp/jest.resolver.js)
-- `node`: use `tsconfig-paths` to tell node where the built files are. Note:
-  in our approach the built files are in a different directory layout, so
-  another `tsconfig.json` file must be used to specify the built directory
-  layout.
-- `react-native`: add `babel-plugin-module-resolver` to configure Metro bundler.
-  Edit `babel.config.js` and `metro.config.js`; see the examples in the
-  [rnapp](./rnapp) folder.
+#### Jest
+
+Create a JS config file for jest, import `pathsToModuleNameMapper`
+from `ts-jest`, and use that to make jest aware of the path aliases.
+If you get problems with multiple instances of React during testing, see
+the jest configuration example in [rnapp](./rnapp):
+
+- [jest.config.js](./rnapp/jest.config.js)
+- [jest.resolver.js](./rnapp/jest.resolver.js)
+
+#### Node
+
+Use `tsconfig-paths` to tell node where the built files are.
+
+Note: in our approach the built files are in a different directory layout, so
+another `tsconfig.json` file must be used to specify the built directory
+layout.
+
+#### React Native
+
+Add `babel-plugin-module-resolver` to configure Metro bundler.
+
+Edit `babel.config.js` and `metro.config.js`; see the examples in the
+[rnapp](./rnapp) folder.
+
+#### Webpack
+
+Webpack is easy to configure to understand tsconfig path aliases.
+Just install `tsconfig-paths-webpack-plugin` from npm, and add the following
+configuration to `webpack.config.js`:
+
+```js
+// ...
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
+// ...
+module.exports = (env, argv) => {
+  // ...
+  return {
+    // ...
+    resolve: {
+      extensions: [".js", ".json", ".ts", ".tsx"],
+      plugins: [new TsconfigPathsPlugin({})],
+    },
+    // ...
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: [{ loader: "ts-loader", options: { transpileOnly: true } }],
+        },
+      ],
+    },
+  }
+}
+```
+
+You could also use other transpilers for TS code, like `esbuild-loader`.
