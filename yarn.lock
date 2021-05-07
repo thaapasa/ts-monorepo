@@ -1768,6 +1768,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@craco/craco@npm:6.1.2":
+  version: 6.1.2
+  resolution: "@craco/craco@npm:6.1.2"
+  dependencies:
+    cross-spawn: ^7.0.0
+    lodash: ^4.17.15
+    semver: ^7.3.2
+    webpack-merge: ^4.2.2
+  peerDependencies:
+    react-scripts: ^4.0.0
+  bin:
+    craco: bin/craco.js
+  checksum: 946d0ea1f83d93c869c3e2d72cc0a3f3f4b099c6d85b03ad62ef7c6d3696505ae53745db84d4caf5c4ebe40e7e81a5009d9662f7aa9fceb832a38a81157e5f33
+  languageName: node
+  linkType: hard
+
 "@csstools/convert-colors@npm:^1.4.0":
   version: 1.4.0
   resolution: "@csstools/convert-colors@npm:1.4.0"
@@ -5752,6 +5768,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cra-app@workspace:cra-app"
   dependencies:
+    "@craco/craco": 6.1.2
     "@testing-library/jest-dom": ^5.11.4
     "@testing-library/react": ^11.1.0
     "@testing-library/user-event": ^12.1.10
@@ -5759,13 +5776,23 @@ __metadata:
     "@types/node": "*"
     "@types/react": "*"
     "@types/react-dom": ^17.0.0
+    craco-alias: 2.2.0
     react: "*"
     react-dom: ^17.0.2
     react-scripts: 4.0.3
+    shared: "workspace:*"
+    ts-loader: 8.x
     typescript: "*"
     web-vitals: ^1.0.1
   languageName: unknown
   linkType: soft
+
+"craco-alias@npm:2.2.0":
+  version: 2.2.0
+  resolution: "craco-alias@npm:2.2.0"
+  checksum: e3c5a4d35eb1d7c6ef32fb3eefe7aa507d1737337301e79526c58c7333861ec3ecdfec613b22ee3498c818284bbe06ffc390cdb59054887fe05d10c8eb65c408
+  languageName: node
+  linkType: hard
 
 "create-ecdh@npm:^4.0.0":
   version: 4.0.4
@@ -6788,7 +6815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^4.3.0":
+"enhanced-resolve@npm:^4.0.0, enhanced-resolve@npm:^4.3.0":
   version: 4.5.0
   resolution: "enhanced-resolve@npm:4.5.0"
   dependencies:
@@ -11423,7 +11450,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2":
   version: 4.0.4
   resolution: "micromatch@npm:4.0.4"
   dependencies:
@@ -15265,7 +15292,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"semver@npm:7.x, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.5":
+"semver@npm:7.x, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5":
   version: 7.3.5
   resolution: "semver@npm:7.3.5"
   dependencies:
@@ -16679,6 +16706,22 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"ts-loader@npm:8.x":
+  version: 8.2.0
+  resolution: "ts-loader@npm:8.2.0"
+  dependencies:
+    chalk: ^4.1.0
+    enhanced-resolve: ^4.0.0
+    loader-utils: ^2.0.0
+    micromatch: ^4.0.0
+    semver: ^7.3.4
+  peerDependencies:
+    typescript: "*"
+    webpack: "*"
+  checksum: c34c66e5193b234e9b2bca3a6ad21a25fc22fb05ac1c9b2e3b6c655adc431033bac60a36c1d0c9caea473ea91748e29f41bf91f25fad3930a32c06cbdee7d9f3
+  languageName: node
+  linkType: hard
+
 "ts-monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "ts-monorepo@workspace:."
@@ -17504,6 +17547,15 @@ typescript@4.2.4:
   peerDependencies:
     webpack: 2 || 3 || 4
   checksum: 00f084e2c2883fa68996758446784e366c76fb32a4cffa5131824dc7c2f8ab8b8c24e8cb8c3bd0776f2ef0471fddc9c37ec7712add925341885ee0cdbc48c4b8
+  languageName: node
+  linkType: hard
+
+"webpack-merge@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "webpack-merge@npm:4.2.2"
+  dependencies:
+    lodash: ^4.17.15
+  checksum: 038c6d8ba45f538ce8e4505a8a3d90fbd2e554ba2065bacffe4d7cff0229cce9f0d983bf56061f8e0fef86c711da7232f88681aab285c06673b3916b1040cd9e
   languageName: node
   linkType: hard
 

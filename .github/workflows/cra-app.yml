@@ -1,0 +1,38 @@
+name: Create React App
+
+on:
+  push:
+    paths:
+    - 'cra-app/**'
+    - 'shared/**'
+    - '.github/workflows/cra-app.yml'
+    - '.yarnrc.yml'
+    - 'yarn.lock'
+    - 'package.json'
+
+defaults:
+  run:
+    working-directory: cra-app
+
+jobs:
+  build:
+    name: Build and test Create React App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.16.1
+
+      - name: Install dependencies for rnapp
+        run: yarn workspaces focus
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Build bundle
+        run: yarn build
