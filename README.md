@@ -1,6 +1,12 @@
 # ts-monorepo
 An example monorepo setup with different TS projects
 
+## Contents
+
+- [rnapp](./rnapp): React Native application
+- [server](./server): Node.js server, deployed as a Docker container
+- [shared](./shared): Code shared between all projects
+
 ## Setup flow
 
 ### Switch to Yarn 2

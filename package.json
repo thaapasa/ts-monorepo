@@ -6,6 +6,7 @@
   "author": "Tuukka Haapasalo <tuukka.haapasalo@gmail.com>",
   "license": "MIT",
   "workspaces": [
+    "rnapp",
     "server",
     "shared"
   ],
