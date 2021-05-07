@@ -39,3 +39,43 @@ yarn plugin import workspace-tools
 ```
 
 See the [documentation](https://yarnpkg.com/cli/workspaces/focus).
+
+### Setup global resolutions
+
+With yarn 2, you can use the `resolutions` field in the root `package.json` to set
+resolutions for all projects. This is useful for setting up all projects to use the
+same version of TypeScript, or express, or any other build tool or library that
+is mainly used by top-level worktrees.
+
+If you would like to defined resolutions to dependencies shared by many libraries,
+be careful that the libraries work with the resolved version. The setting in the
+root `package.json` is global, so it forces the resolution for each use case.
+For example, the [uuid](https://www.npmjs.com/package/uuid) library has a breaking
+change between some major versions, so resolving it to a newer version will
+probably break some other dependencies that require an older version of the library.
+
+### Link workspaces
+
+For yarn to resolve transitive dependencies to linked projects, you need to add
+the projects (or _workstrees_, as yarn calls them) to the root `package.json`, and
+then install the shared projects to each project that needs them. For example, in
+this repo the `shared` project is linked to the `server` project by having a
+dependency `{ "shared": "workspace:*" }`.
+
+The version `workspace:*` is what yarn suggests for linking the worktrees. The
+`workspace` prefix ensures that yarn will not try to find the dependency from
+npm.
+
+### Setup path aliases
+
+There are other ways of making the builds work, but the approach in this repo
+is to configure the paths to shared code via path aliases specified in `tsconfig.json`.
+With the path aliases in place in `tsconfig.json`, the TypeScript compiler (`tsc`)
+will find the files, but other tools need to be configured:
+
+- `jest`: create a JS config file for jest, import `pathsToModuleNameMapper`
+  from `ts-jest`, and use that to make jest aware of the path aliases.
+- `node`: use `tsconfig-paths` to tell node where the built files are. Note:
+  in our approach the built files are in a different directory layout, so
+  another `tsconfig.json` file must be used to specify the built directory
+  layout.
