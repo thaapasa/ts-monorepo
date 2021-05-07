@@ -81,7 +81,7 @@ will find the files, but other tools need to be configured:
 
 Depending on the project, you may need to have the imported shared code folders
 added to the `include` list of your `tsconfig.json` so that `tsc` knows to compile
-the imported files.
+the imported files (see [server/tsconfig.json](./server/tsconfig.json), for example).
 
 #### Jest
 
