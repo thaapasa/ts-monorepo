@@ -9,9 +9,9 @@
     "debug": "*"
   },
   "devDependencies": {
-    "@swc-node/register": "*",
     "@types/debug": "*",
     "nodemon": "*",
+    "ts-node": "*",
     "tsconfig-paths": "*",
     "typescript": "*"
   }

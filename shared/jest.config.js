@@ -8,7 +8,7 @@ const moduleNameMapper = pathsToModuleNameMapper(
 
 module.exports = {
   transform: {
-    "^.+\\.tsx?$": "@swc-node/jest"
+    "^.+\\.tsx?$": "ts-jest"
   },
   testRegex: "((src|test)/.*(\\.|/)(test|spec))\\.(js|ts)$",
   testURL: "http://localhost:11000",
