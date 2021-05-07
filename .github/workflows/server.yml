@@ -61,3 +61,6 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Stop running server
+        run: docker stop server
