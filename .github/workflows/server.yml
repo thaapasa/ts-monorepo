@@ -56,7 +56,7 @@ jobs:
 
       - name: Start server container
         run: |
-          docker run -p 4500:4500 --rm --name server server:latest
+          docker run -p 4500:4500 --rm --name server -d server:latest
           ../scripts/wait-for-url.sh http://localhost:4500/status
 
       - name: Run tests
