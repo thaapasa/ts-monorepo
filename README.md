@@ -104,6 +104,12 @@ Add `babel-plugin-module-resolver` to configure Metro bundler.
 Edit `babel.config.js` and `metro.config.js`; see the examples in the
 [rnapp](./rnapp) folder.
 
+#### Create React App
+
+Work around the limitations on CRA by tricking the build and using
+[CRACO](https://github.com/gsoft-inc/craco).
+See the [cra-app](./cra-app) folder for details.
+
 #### Webpack
 
 Webpack is easy to configure to understand tsconfig path aliases.
