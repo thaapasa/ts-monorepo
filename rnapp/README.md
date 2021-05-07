@@ -33,3 +33,28 @@ and add rnapp to workspaces by adding the following configuration to
 
 Then, remove `yarn.lock` and run `yarn` again to merge dependency resolution
 to yarn 2.
+
+## Configure linked modules
+
+Add `babel-plugin-module-resolver`:
+
+```sh
+yarn add babel-plugin-module-resolver
+```
+
+Then, edit [metro.config.js](./metro.config.js) and
+[babel.config.js](./babel.config.js) to link the tsconfig path aliases
+to the Metro bundling process.
+
+## Testing with jest
+
+Jest seems to work with the abovementioned setup, without further configuration.
+However, if you test React rendering and have shared React Hooks, you may end
+up with several different versions of React in the module resolution, and this
+may break the jest tests.
+
+If this happens, you can configure jest manually to resolve only one version of
+react. To do that, remove the jest configuration from [package.json](./package.json),
+and add custom [jest.config.js](./jest.config.js) and
+[jest.resolver.js](./jest.resolver.js). This example resolver is setup to
+locate all `react` dependencies from the project root.

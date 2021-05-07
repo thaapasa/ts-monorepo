@@ -81,6 +81,10 @@ will find the files, but other tools need to be configured:
 
 - `jest`: create a JS config file for jest, import `pathsToModuleNameMapper`
   from `ts-jest`, and use that to make jest aware of the path aliases.
+  If you get problems with multiple instances of React during testing, see
+  the jest configuration example in [rnapp](./rnapp):
+  - [jest.config.js](./rnapp/jest.config.js)
+  - [jest.resolver.js](./rnapp/jest.resolver.js)
 - `node`: use `tsconfig-paths` to tell node where the built files are. Note:
   in our approach the built files are in a different directory layout, so
   another `tsconfig.json` file must be used to specify the built directory
