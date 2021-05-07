@@ -10,6 +10,7 @@
 
 import React from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -19,9 +20,8 @@ import {
   View,
 } from 'react-native';
 
-import {generateHello} from 'shared/code';
-
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
+import {generateGreeting} from './GreetingService';
 
 const Section: React.FC<{
   title: string;
@@ -54,7 +54,10 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const [hello] = React.useState(generateHello());
+  const [hello, setHello] = React.useState(generateGreeting());
+  const newGreeting = React.useCallback(() => setHello(generateGreeting()), [
+    setHello,
+  ]);
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -68,8 +71,12 @@ const App = () => {
             {backgroundColor: isDarkMode ? Colors.black : Colors.white},
             styles.mainContent,
           ]}>
-          <Section title="Your code">
+          <Section title="Your greeting">
             We just want to say: <Text style={styles.highlight}>{hello}</Text>
+          </Section>
+          <Section title="Unhappy?">
+            <Button title="Click" onPress={newGreeting} /> for another
+            greeting...
           </Section>
         </View>
       </ScrollView>

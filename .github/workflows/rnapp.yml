@@ -1,0 +1,38 @@
+name: Test React Native app
+
+on:
+  push:
+    paths:
+    - 'rnapp/**'
+    - 'shared/**'
+    - '.github/workflows/rnapp.yml'
+    - '.yarnrc.yml'
+    - 'yarn.lock'
+    - 'package.json'
+
+defaults:
+  run:
+    working-directory: rnapp
+
+jobs:
+  build:
+    name: Build and test React Native app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.16.1
+
+      - name: Install dependencies for rnapp
+        run: yarn workspaces focus
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test

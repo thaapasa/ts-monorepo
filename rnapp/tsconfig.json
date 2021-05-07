@@ -10,7 +10,7 @@
     "noEmit": true,
     "isolatedModules": false,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "paths": {
       "shared/*": ["../shared/src/*"]
     }

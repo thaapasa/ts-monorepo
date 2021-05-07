@@ -1769,7 +1769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.64.0":
+"@types/react-native@npm:0.64.4":
   version: 0.64.4
   resolution: "@types/react-native@npm:0.64.4"
   dependencies:
@@ -1787,7 +1787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
+"@types/react@npm:17.0.5":
   version: 17.0.5
   resolution: "@types/react@npm:17.0.5"
   dependencies:
@@ -1795,17 +1795,6 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: f9793e8113f14122d6ed20643b4fe27d30e10d7c80571a1d238c13f8171864f2a7b337194bf41310724498586ed4560fffd081a2d21e488afbb1aca33534189b
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^16":
-  version: 16.14.6
-  resolution: "@types/react@npm:16.14.6"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: 3ea394da0ab1aef2949ffd3412165875c30ac8cbfefc75be8e677f66f26ab825b738717371e83449f5550669523f3f3a6ae6510f54b64a631982b3cadf28f51c
   languageName: node
   linkType: hard
 
@@ -6127,7 +6116,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:*, jest@npm:26.6.3, jest@npm:^26.6.3":
+"jest@npm:26.6.3":
   version: 26.6.3
   resolution: "jest@npm:26.6.3"
   dependencies:
@@ -8771,19 +8760,20 @@ resolve@^2.0.0-next.3:
     "@babel/core": ^7.12.9
     "@babel/runtime": ^7.12.5
     "@react-native-community/eslint-config": ^2.0.0
-    "@types/jest": ^26.0.20
-    "@types/react-native": ^0.64.0
+    "@types/jest": "*"
+    "@types/react": "*"
+    "@types/react-native": "*"
     "@types/react-test-renderer": ^16.9.2
     babel-jest: ^26.6.3
     babel-plugin-module-resolver: 4.1.0
     eslint: ^7.14.0
-    jest: ^26.6.3
+    jest: "*"
     metro-react-native-babel-preset: ^0.64.0
-    react: 17.0.1
+    react: "*"
     react-native: 0.64.0
-    react-test-renderer: 17.0.1
+    react-test-renderer: "*"
     shared: "workspace:*"
-    typescript: ^3.8.3
+    typescript: "*"
   languageName: unknown
   linkType: soft
 
