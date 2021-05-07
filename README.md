@@ -30,3 +30,12 @@ Then, setup your `.gitignore` like so:
 
 This assumes that you do not use Zero-Installs; see the
 [documentation](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored).
+
+To use the command `yarn workspaces focus` (for installing deps to only one module), you
+must run:
+
+```sh
+yarn plugin import workspace-tools
+```
+
+See the [documentation](https://yarnpkg.com/cli/workspaces/focus).
