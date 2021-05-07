@@ -1,0 +1,63 @@
+name: Build and test server
+
+on:
+  push:
+    paths:
+    - 'server/**'
+    - 'shared/**'
+    - '.github/workflows/server.yml'
+    - '.yarnrc.yml'
+    - 'yarn.lock'
+    - 'package.json'
+
+defaults:
+  run:
+    working-directory: server
+
+jobs:
+  build:
+    name: Build and test shared code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.16.1
+
+      - name: Install dependencies for server
+        run: yarn workspaces focus
+
+      # Yarn installs symbolic links to linked workspaces. However, since we have TS projects,
+      # we use tsconfig paths to compile and access them, and not the symbolic links in node_modules.
+      # Remove the links so that the other workspaces are not included via node_modules (they take
+      # up space and mess with the module resolution)
+      - name: Remove linked workspaces
+        shell: bash
+        run: |
+          DIRS=$(find node_modules -type l -maxdepth 1)
+          echo "Removing symbolic links to workspaces from node_modules:"
+          echo "$DIRS"
+          if [[ "$DIRS" != "" ]]
+          then
+            echo $DIRS | xargs rm
+          else
+            echo "No symbolic links to prune"
+          fi
+
+      - name: Build project
+        run: yarn build
+
+      - name: Build Docker image
+        run: docker build -t server:latest .
+
+      - name: Start server container
+        run: |
+          docker run -p 4500:4500 --rm --name server server:latest
+          ../scripts/wait-for-url.sh http://localhost:4500/status
+
+      - name: Run tests
+        run: yarn test

@@ -1,0 +1,10 @@
+{
+  /* This is a dummy configuration that only contains the absolute import paths
+     for the tsconfig-paths module (for running the built JavaScript code) */
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "shared/*": ["dist/shared/src/*"]
+    },
+  },
+}
