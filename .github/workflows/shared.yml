@@ -1,4 +1,4 @@
-name: Shared module
+name: Shared code
 
 on:
   push:

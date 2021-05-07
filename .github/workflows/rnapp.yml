@@ -1,4 +1,4 @@
-name: Test React Native app
+name: React Native app
 
 on:
   push:
