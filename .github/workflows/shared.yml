@@ -1,0 +1,37 @@
+name: Shared module
+
+on:
+  push:
+    paths:
+    - 'shared/**'
+    - '.github/workflows/shared.yml'
+    - '.yarnrc.yml'
+    - 'yarn.lock'
+    - 'package.json'
+
+defaults:
+  run:
+    working-directory: shared
+
+jobs:
+  build:
+    name: Build and test shared code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.16.1
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build project
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test
